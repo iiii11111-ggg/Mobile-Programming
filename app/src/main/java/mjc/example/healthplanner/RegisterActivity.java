@@ -128,7 +128,6 @@ public class RegisterActivity extends AppCompatActivity {
                 String userHeight = etHeight.getText().toString();
                 String userWeight = etWeight.getText().toString();
 
-                //TODO. validate
                 if (userPassword.equals("") || userName.equals("") || userPasswordValid.equals("") ||
                           userGender.equals("") || userAge.equals("") || userHeight.equals("") || userWeight.equals(""))
                 {
