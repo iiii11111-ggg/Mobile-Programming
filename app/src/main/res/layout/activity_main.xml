@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fullScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:clickable="true"
+    android:focusable="true">
+
+    <ImageView
+        android:id="@+id/characterImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="-180dp"
+        android:src="@drawable/start"
+        android:elevation="0dp" />
+
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="몸짱플래너"
+        android:layout_marginTop="40dp"
+        android:textStyle="bold"
+        android:textSize="72dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:elevation="2dp" />
+
+    <TextView
+        android:id="@+id/motivationText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/userName"
+        android:layout_marginBottom="-82dp"
+        android:elevation="2dp"
+        android:text="몸짱을 향하여 고고!!"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="80dp"
+        android:elevation="2dp"
+        android:text="환영합니다. user_id님!!"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="26sp" />
+
+</RelativeLayout>
+
