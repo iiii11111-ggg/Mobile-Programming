@@ -6,7 +6,7 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 public class LoginRequest extends StringRequest {
-    final static private String URL = "http://10.11.63.27:8080/UserLogin.jsp"; //
+    final static private String URL = "http://192.168.0.18:8080/UserLogin.jsp"; //
     private Map<String,String> parameters;
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
