@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 if (!isFinishing()) {
 
-                    Intent intent = new Intent(getApplicationContext(), Planner.class);
+                    Intent intent = new Intent(getApplicationContext(),RecommendActivity.class);
                     startActivity(intent);
                     finish();
                 }
