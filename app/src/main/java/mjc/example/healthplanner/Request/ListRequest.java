@@ -7,7 +7,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ListRequest extends StringRequest {
-    final static private String URL = "http://172.111.79.223:8080/UserLogin.jsp"; //
+    final static private String URL = "http://192.168.0.18:8080/UserLogin.jsp"; //
     private Map<String,String> parameters;
     public ListRequest(String userID,String exerciseId, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);

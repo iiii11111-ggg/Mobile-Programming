@@ -1,6 +1,7 @@
 package mjc.example.healthplanner;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
@@ -21,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView userName = findViewById(R.id.userName);
-        Intent inIntent = getIntent();
-        String userID = inIntent.getStringExtra("userID");
-        userName.setText("환영합니다." +userID+"님!!");
+        SharedPreferences share = getSharedPreferences("userInfo",MODE_PRIVATE);
+        String username = share.getString("userName","고객님");
+        userName.setText("환영합니다." +username+"님!!");
 
         mDelayHandler = new Handler(Looper.getMainLooper());
 
