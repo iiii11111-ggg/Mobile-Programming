@@ -67,13 +67,13 @@ public class LoginActivity extends AppCompatActivity {
                                 editor.putString("userId",jsonResponse.getString("id"));
                                 editor.putString("userName",jsonResponse.getString("name"));
                                 editor.putString("userGender",jsonResponse.getString("gender"));
+                                editor.putString("userAge",jsonResponse.getString("age"));
                                 editor.putString("userHeight",jsonResponse.getString("height"));
                                 editor.putString("userWeight",jsonResponse.getString("weight"));
                                 editor.apply();
 
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(mainIntent);
-                                finish();
                             }
                             else
                             {

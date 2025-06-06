@@ -64,21 +64,22 @@
         android:background="@android:color/white"
         android:padding="8dp"
         app:layout_constraintTop_toBottomOf="@id/recommendationText"
-        app:layout_constraintBottom_toTopOf="@id/startButton"
+        app:layout_constraintBottom_toTopOf="@id/listupButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginVertical="8dp"
         >
-
-        <!-- 1. 운동 아이템 -->
-        <include layout="@layout/arm_item" />
-
+        <ViewStub
+            android:id="@+id/exerciseStub"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout="@layout/arm_item" />
 
     </LinearLayout>
 
     <!-- 하단 버튼 -->
     <Button
-        android:id="@+id/startButton"
+        android:id="@+id/listupButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="이대로 진행 하기"

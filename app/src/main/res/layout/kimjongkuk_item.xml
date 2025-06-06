@@ -16,7 +16,7 @@
             android:id="@+id/exerciseImage1"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/deadlift"
+            android:src="@drawable/ohp"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -26,7 +26,7 @@
             android:id="@+id/exerciseName1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="데드리프트"
+            android:text="숄더 프레스"
             android:textSize="16sp"
             android:textColor="#000000"
             android:layout_marginStart="12dp"
@@ -45,7 +45,7 @@
             android:id="@+id/exerciseImage2"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/onearmdumbellow"
+            android:src="@drawable/start"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -55,7 +55,7 @@
             android:id="@+id/exerciseName2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="원암 덤벨 로우"
+            android:text="스쿼트"
             android:textSize="16sp"
             android:textColor="#000000"
             android:layout_marginStart="12dp"
@@ -74,7 +74,7 @@
             android:id="@+id/exerciseImage3"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ratfulldown"
+            android:src="@drawable/deadlift"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -84,7 +84,7 @@
             android:id="@+id/exerciseName3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="렛풀다운"
+            android:text="데드리프트"
             android:textSize="16sp"
             android:textColor="#000000"
             android:layout_marginStart="12dp"
@@ -103,7 +103,7 @@
             android:id="@+id/exerciseImage4"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/tbarlow"
+            android:src="@drawable/start"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -113,7 +113,7 @@
             android:id="@+id/exerciseName4"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="티바로우"
+            android:text="벤치 프레스"
             android:textSize="16sp"
             android:textColor="#000000"
             android:layout_marginStart="12dp"
@@ -121,3 +121,31 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 항목 5 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/start"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="풀업"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage5"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

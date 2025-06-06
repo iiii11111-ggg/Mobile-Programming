@@ -155,12 +155,7 @@ public class RegisterActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if (success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.
-                                        this);
-                                dialog = builder.setMessage("회원으로등록되었습니다.")
-                                        .setPositiveButton("확인", null)
-                                        .create();
-                                dialog.show();
+                                Toast.makeText(getApplicationContext(),"회원가입 완료",Toast.LENGTH_SHORT).show();
                                 finish();
                             } else {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.
