@@ -16,7 +16,7 @@
             android:id="@+id/exerciseImage1"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/ohp"
+            android:src="@drawable/shoulderpress"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
