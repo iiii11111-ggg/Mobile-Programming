@@ -1,6 +1,7 @@
 package mjc.example.healthplanner;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -61,9 +62,18 @@ public class LoginActivity extends AppCompatActivity {
 
                             if(success)
                             {
+                                SharedPreferences shared = getSharedPreferences("userInfo",MODE_PRIVATE);
+                                SharedPreferences.Editor editor = shared.edit();
+                                editor.putString("userId",jsonResponse.getString("id"));
+                                editor.putString("userName",jsonResponse.getString("name"));
+                                editor.putString("userGender",jsonResponse.getString("gender"));
+                                editor.putString("userHeight",jsonResponse.getString("height"));
+                                editor.putString("userWeight",jsonResponse.getString("weight"));
+                                editor.apply();
+
                                 Intent mainIntent = new Intent(LoginActivity.this, MainActivity.class);
-                                mainIntent.putExtra("userID", userID);
                                 startActivity(mainIntent);
+                                finish();
                             }
                             else
                             {

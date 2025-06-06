@@ -8,6 +8,9 @@
  <%
  String pr_id = request.getParameter("userID");
  String pr_passwd = request.getParameter("userPassword");
+
+ String id,name,age,gender,height,weight;
+
  boolean success=false;
  Connection conn=null;
     PreparedStatement prepared_stat=null;
@@ -37,6 +40,36 @@
    }
 
   jsonResponse.put("success", success);
+
+  if(success)
+  {
+   sql = "select * from user where userId = ? AND userPassword = ?";
+   prepared_stat = conn.prepareStatement(sql);
+   prepared_stat.setString(1,pr_id);
+   prepared_stat.setString(2,pr_passwd);
+
+   rs = prepared_stat.executeQuery();
+
+   if(rs.next()){
+      id = pr_id;
+      name = rs.getString("userName");
+      age = rs.getString("userAge");
+      gender = rs.getString("userGender");
+      height = rs.getString("userHeight");
+      weight = rs.getString("userWeight");
+
+      jsonResponse.put("id",id);
+      jsonResponse.put("name",name);
+      jsonResponse.put("age",age);
+      jsonResponse.put("gender",gender);
+      jsonResponse.put("height",height);
+      jsonResponse.put("weight",weight);
+  }
+  else{
+   jsonResponse.put("message", "ID AND PASSWORD IS WRONG SECOND");
+   }
+
+  }
   out.println(jsonResponse.toString());
 
  } catch (SQLException ex) {

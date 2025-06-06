@@ -26,7 +26,8 @@
         </activity>
         <activity android:name=".RegisterActivity" android:exported="false"></activity>
         <activity android:name=".MainActivity" android:exported="false"></activity>
-        <activity android:name=".Planner" android:exported="false"></activity>
+        <activity android:name=".PlannerActicity" android:exported="false"></activity>
+        <activity android:name=".RecommendActivity" android:exported="false"></activity>
     </application>
 
 </manifest>
