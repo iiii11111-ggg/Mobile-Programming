@@ -77,7 +77,7 @@ public class RecommendActivity extends AppCompatActivity {
             list.setLayoutResource(R.layout.leg_item);
         }
         else if(userClass.equals("정상")) {
-            list.setLayoutResource(R.layout.kimjongkuk_item);
+            list.setLayoutResource(R.layout.leg_item);
         }
         else {
             list.setLayoutResource(R.layout.back_item);
