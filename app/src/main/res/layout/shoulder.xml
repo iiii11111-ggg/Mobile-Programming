@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="8dp">
+
+    <!-- 항목 1 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/shoulderpress"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="숄더 프레스"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 항목 2 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/sarere"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="사이드 레터럴 레이즈"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 항목 3 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ohp"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="오버헤드프레스"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 항목 4 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/backfly"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="백 플라이"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/uplightlow"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="업라이트 로우"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage5"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp">
+
+        <ImageView
+            android:id="@+id/exerciseImage6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/faceful"
+            android:contentDescription="운동 이미지"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/exerciseName6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="페이스 풀"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/exerciseImage6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
