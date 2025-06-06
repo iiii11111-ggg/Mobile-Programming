@@ -1,22 +1,34 @@
 package mjc.example.healthplanner.Request;
 
+import com.android.volley.Request;
 import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.JsonObjectRequest;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-public class ListRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.18:8080/UserLogin.jsp"; //
-    private Map<String,String> parameters;
-    public ListRequest(String userID,String exerciseId, Response.Listener<String> listener) {
-        super(Method.POST, URL, listener, null);
-        parameters = new HashMap<>();
-        parameters.put("userID", userID);
-        parameters.put("exerciseId",exerciseId);
+import java.util.List;
+
+public class ListRequest extends JsonObjectRequest {
+    private static final String URL = "http://192.168.0.18:8080/ListUp.jsp";
+
+    public ListRequest(String userID, List<String> exerciseIds, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        super(Request.Method.POST, URL, createRequestBody(userID, exerciseIds), listener, errorListener);
     }
-    @Override
-    public Map<String, String> getParams() {
-        return parameters;
+
+    private static JSONObject createRequestBody(String userID, List<String> exerciseIds) {
+        JSONObject json = new JSONObject();
+        try {
+            json.put("userID", userID);
+            JSONArray jsonArray = new JSONArray();
+            for (String id : exerciseIds) {
+                jsonArray.put(id);
+            }
+            json.put("exerciseIds", jsonArray);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 }
