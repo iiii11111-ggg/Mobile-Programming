@@ -14,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.android.volley.Response;
 
 import org.json.JSONObject;
-import org.w3c.dom.Text;
 
 public class RecommendActivity extends AppCompatActivity {
 
@@ -27,7 +26,7 @@ public class RecommendActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recommend);
+        setContentView(R.layout.activity_recommend);
         SharedPreferences share = getSharedPreferences("userInfo",MODE_PRIVATE);
 
         //----------------------------BMI 계산----------------------------------------
@@ -68,19 +67,16 @@ public class RecommendActivity extends AppCompatActivity {
         ViewStub list = findViewById(R.id.exerciseStub);
         if(userClass.equals("비만"))
         {
-            list.setLayoutResource(R.layout.arm_item);
+            list.setLayoutResource(R.layout.item_diet);
         }
         else if (userClass.equals("과체중")) {
-            list.setLayoutResource(R.layout.chest_item);
+            list.setLayoutResource(R.layout.item_arm);
         }
         else if (userClass.equals("저체중")) {
-            list.setLayoutResource(R.layout.chest_item);
+            list.setLayoutResource(R.layout.item_muscle);
         }
         else if(userClass.equals("정상")) {
-            list.setLayoutResource(R.layout.chest_item);
-        }
-        else {
-            list.setLayoutResource(R.layout.back_item);
+            list.setLayoutResource(R.layout.item_normal);
         }
         View listView = list.inflate();
 

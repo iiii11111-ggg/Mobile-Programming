@@ -14,7 +14,7 @@ public class PlannerActicity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.planner);
+        setContentView(R.layout.activity_planner);
         calendarView = findViewById(R.id.calendarView);
     }
 }
