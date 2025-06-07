@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.prolificinteractive.materialcalendarview.*;
 
+
 public class PlannerActicity extends AppCompatActivity {
 
     MaterialCalendarView calendarView;
@@ -16,5 +17,7 @@ public class PlannerActicity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planner);
         calendarView = findViewById(R.id.calendarView);
+
+        PlannerDecoratior.setupCalendar(calendarView, this);
     }
 }

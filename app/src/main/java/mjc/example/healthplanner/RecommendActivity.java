@@ -3,6 +3,7 @@ package mjc.example.healthplanner;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
@@ -45,9 +46,6 @@ public class RecommendActivity extends AppCompatActivity {
         userBMI = userWeight /((userHeight/100)*(userHeight/100));
         userBMI = Math.round(userBMI * 10) / 10.0f;
 
-        BMIText = findViewById(R.id.BMIText);
-        BMIText.setText("당신의 BMI : " + String.valueOf(userBMI));
-
         //---------------------------BMI에 따른 체중 기준 가져오기------------------------
 
         userId = share.getString("userId","Null");
@@ -56,6 +54,10 @@ public class RecommendActivity extends AppCompatActivity {
         String userClass = BMIClass.getBMIClass(userBMI,userAge,userGender);
 
         //------------BMI 기준에 따른 출력 : 문구 -----------
+
+        BMIText = findViewById(R.id.BMIText);
+        BMIText.setText("당신의 BMI : " + String.valueOf(userBMI) + " ("+userClass+")");
+
         TextView congrastText = findViewById(R.id.congratsText);
         if(userClass.equals("비만"))
         {
@@ -80,7 +82,7 @@ public class RecommendActivity extends AppCompatActivity {
             list.setLayoutResource(R.layout.item_diet);
         }
         else if (userClass.equals("과체중")) {
-            list.setLayoutResource(R.layout.item_diet);
+            list.setLayoutResource(R.layout.item_overweight);
         }
         else if (userClass.equals("저체중")) {
             list.setLayoutResource(R.layout.item_muscle);
@@ -121,11 +123,11 @@ public class RecommendActivity extends AppCompatActivity {
                 }
                 else if (userClass.equals("과체중")) {
                     exerciseList.add("31");
-                    exerciseList.add("32");
-                    exerciseList.add("33");
-                    exerciseList.add("34");
                     exerciseList.add("35");
-                    exerciseList.add("36");
+                    exerciseList.add("7");
+                    exerciseList.add("13");
+                    exerciseList.add("25");
+                    exerciseList.add("33");
                 }
                 else if (userClass.equals("저체중")) {
                     exerciseList.add("30");
@@ -147,16 +149,11 @@ public class RecommendActivity extends AppCompatActivity {
                 Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        try {
-                            if(response.getBoolean("success")){
-                                Toast.makeText(RecommendActivity.this, "기록되었습니다.", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(RecommendActivity.this,PlannerActicity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
+
+                        Toast.makeText(RecommendActivity.this, "기록되었습니다.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RecommendActivity.this,PlannerActicity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 };
                 Response.ErrorListener errorListener = new Response.ErrorListener() {
