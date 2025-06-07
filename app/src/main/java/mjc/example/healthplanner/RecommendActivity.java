@@ -3,7 +3,6 @@ package mjc.example.healthplanner;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewStub;
 import android.widget.Button;
@@ -97,9 +96,8 @@ public class RecommendActivity extends AppCompatActivity {
         skipText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),PlannerActicity.class);
+                Intent intent = new Intent(getApplicationContext(), PlannerActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
 
@@ -151,9 +149,8 @@ public class RecommendActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         Toast.makeText(RecommendActivity.this, "기록되었습니다.", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(RecommendActivity.this,PlannerActicity.class);
+                        Intent intent = new Intent(RecommendActivity.this, PlannerActivity.class);
                         startActivity(intent);
-                        finish();
                     }
                 };
                 Response.ErrorListener errorListener = new Response.ErrorListener() {

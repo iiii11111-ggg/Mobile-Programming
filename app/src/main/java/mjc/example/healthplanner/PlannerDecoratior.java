@@ -3,8 +3,11 @@ package mjc.example.healthplanner;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.StyleSpan;
 
 
 import androidx.core.content.ContextCompat;
@@ -39,11 +42,6 @@ public class PlannerDecoratior {
             }
         });
 
-        // 일요일 빨간색, 토요일 파란색 데코레이터 추가
-        calendarView.addDecorators(
-                new SundayDecorator(context),
-                new SaturdayDecorator(context)
-        );
 
 
         //요일 색상 변경
@@ -133,4 +131,72 @@ public class PlannerDecoratior {
                     ContextCompat.getColor(context, R.color.blue_saturday)));
         }
     }
+
+    public static class TodayDecorator implements DayViewDecorator {
+
+        private final CalendarDay today;
+
+        public TodayDecorator() {
+            today = CalendarDay.today();
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return day.equals(today);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new ForegroundColorSpan( Color.parseColor("#000000")));
+            view.addSpan(new StyleSpan(Typeface.BOLD)); // 텍스트를 볼드체로
+            view.addSpan(new RelativeSizeSpan(1.2f)); // 텍스트 크기를 약간 키움
+            // view.setBackgroundDrawable(ContextCompat.getDrawable(view.view.getContext(), R.drawable.your_today_background));
+        }
+    }
+
+    public static class SelectedDateDecorator implements DayViewDecorator {
+
+        private final CalendarDay selectedDate;
+
+        public SelectedDateDecorator(CalendarDay date) {
+            this.selectedDate = date;
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return day.equals(selectedDate);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new ForegroundColorSpan( Color.parseColor("#000000")));
+            view.addSpan(new StyleSpan(Typeface.BOLD)); // 볼드
+            view.addSpan(new RelativeSizeSpan(1.2f)); // 크기 키움
+        }
+    }
+
+    public static class DimDatesDecorator implements DayViewDecorator {
+
+        private final CalendarDay today;
+        private final int dimColor;
+
+        public DimDatesDecorator() {
+            today = CalendarDay.today();
+            dimColor = Color.parseColor("#CCCCCC"); // 흐릿하게 만들 색상 (회색 계열)
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            // 오늘 날짜가 아닌 모든 날짜를 흐릿하게 처리
+            return !day.equals(today);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new ForegroundColorSpan(dimColor)); // 글자 색상을 흐릿한 색으로 변경
+
+        }
+    }
+
+
 }
