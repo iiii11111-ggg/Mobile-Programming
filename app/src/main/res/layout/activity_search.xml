@@ -74,7 +74,6 @@
                 android:textSize="14sp"
                 android:textColor="#000000"
                 android:padding="8dp"
-                android:background="@drawable/tab_selected_background"
                 android:layout_marginEnd="8dp" />
 
             <!-- 나머지 탭 -->
@@ -441,7 +440,7 @@
             android:textColor="#000000"
             android:layout_marginEnd="8dp" />
 
-        <!-- 즐겨찾기 아이콘 -->
 
         <!-- 오른쪽 화살표 -->
     </LinearLayout>
+</LinearLayout>

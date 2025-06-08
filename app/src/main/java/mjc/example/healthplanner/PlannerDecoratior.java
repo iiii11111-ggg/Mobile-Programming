@@ -4,6 +4,7 @@ package mjc.example.healthplanner;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
 import android.text.style.RelativeSizeSpan;
@@ -22,6 +23,8 @@ import com.prolificinteractive.materialcalendarview.format.WeekDayFormatter;
 import org.threeten.bp.DayOfWeek;
 
 import java.util.Calendar;
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.Locale;
 
 public class PlannerDecoratior {
@@ -132,6 +135,27 @@ public class PlannerDecoratior {
         }
     }
 
+    public static class GrayDateDecorator implements DayViewDecorator {
+
+        private final HashSet<CalendarDay> dates;
+        private final Drawable grayBackground;
+
+        public GrayDateDecorator(Context context, Collection<CalendarDay> dates) {
+            this.dates = new HashSet<>(dates);
+            this.grayBackground = ContextCompat.getDrawable(context, R.drawable.selected_background_calendar); // 회색
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return dates.contains(day);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.setBackgroundDrawable(grayBackground);
+        }
+    }
+
     public static class TodayDecorator implements DayViewDecorator {
 
         private final CalendarDay today;
@@ -151,27 +175,6 @@ public class PlannerDecoratior {
             view.addSpan(new StyleSpan(Typeface.BOLD)); // 텍스트를 볼드체로
             view.addSpan(new RelativeSizeSpan(1.2f)); // 텍스트 크기를 약간 키움
             // view.setBackgroundDrawable(ContextCompat.getDrawable(view.view.getContext(), R.drawable.your_today_background));
-        }
-    }
-
-    public static class SelectedDateDecorator implements DayViewDecorator {
-
-        private final CalendarDay selectedDate;
-
-        public SelectedDateDecorator(CalendarDay date) {
-            this.selectedDate = date;
-        }
-
-        @Override
-        public boolean shouldDecorate(CalendarDay day) {
-            return day.equals(selectedDate);
-        }
-
-        @Override
-        public void decorate(DayViewFacade view) {
-            view.addSpan(new ForegroundColorSpan( Color.parseColor("#000000")));
-            view.addSpan(new StyleSpan(Typeface.BOLD)); // 볼드
-            view.addSpan(new RelativeSizeSpan(1.2f)); // 크기 키움
         }
     }
 
@@ -198,5 +201,33 @@ public class PlannerDecoratior {
         }
     }
 
+    public static class SelectedDateDecorator implements DayViewDecorator {
 
-}
+        private final CalendarDay selectedDate;
+        private Drawable defaultSelectionDrawable;
+
+        public SelectedDateDecorator(CalendarDay date,Context context) {
+            this.selectedDate = date;
+            this.defaultSelectionDrawable = ContextCompat.getDrawable(context, R.drawable.selected_calendar);
+        }
+
+        @Override
+        public boolean shouldDecorate(CalendarDay day) {
+            return day.equals(selectedDate);
+        }
+
+        @Override
+        public void decorate(DayViewFacade view) {
+            view.addSpan(new ForegroundColorSpan( Color.parseColor("#000000")));
+            view.addSpan(new StyleSpan(Typeface.BOLD)); // 볼드
+            view.addSpan(new RelativeSizeSpan(1.2f)); // 크기 키움
+
+            if (defaultSelectionDrawable != null) {
+                view.setSelectionDrawable(defaultSelectionDrawable);
+        }
+    }
+
+
+
+
+}}

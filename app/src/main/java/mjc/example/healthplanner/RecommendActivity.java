@@ -105,6 +105,7 @@ public class RecommendActivity extends AppCompatActivity {
 
         Button listupButton = findViewById(R.id.listupButton);
         List<String> exerciseList = new ArrayList<>();
+        List<String> setCountList = new ArrayList<>();
 
         listupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,6 +119,12 @@ public class RecommendActivity extends AppCompatActivity {
                     exerciseList.add("34");
                     exerciseList.add("35");
                     exerciseList.add("36");
+                    setCountList.add("15분");
+                    setCountList.add("10분");
+                    setCountList.add("15분");
+                    setCountList.add("15분");
+                    setCountList.add("10분");
+                    setCountList.add("10분");
                 }
                 else if (userClass.equals("과체중")) {
                     exerciseList.add("31");
@@ -126,6 +133,12 @@ public class RecommendActivity extends AppCompatActivity {
                     exerciseList.add("13");
                     exerciseList.add("25");
                     exerciseList.add("33");
+                    setCountList.add("15분");
+                    setCountList.add("10분");
+                    setCountList.add("3세트");
+                    setCountList.add("2세트");
+                    setCountList.add("3세트");
+                    setCountList.add("10분");
                 }
                 else if (userClass.equals("저체중")) {
                     exerciseList.add("30");
@@ -134,6 +147,12 @@ public class RecommendActivity extends AppCompatActivity {
                     exerciseList.add("13");
                     exerciseList.add("23");
                     exerciseList.add("11");
+                    setCountList.add("2세트");
+                    setCountList.add("2세트");
+                    setCountList.add("3세트");
+                    setCountList.add("3세트");
+                    setCountList.add("2세트");
+                    setCountList.add("2세트");
                 }
                 else if(userClass.equals("정상")) {
                     exerciseList.add("25");
@@ -142,6 +161,12 @@ public class RecommendActivity extends AppCompatActivity {
                     exerciseList.add("13");
                     exerciseList.add("23");
                     exerciseList.add("31");
+                    setCountList.add("2세트");
+                    setCountList.add("2세트");
+                    setCountList.add("3세트");
+                    setCountList.add("3세트");
+                    setCountList.add("2세트");
+                    setCountList.add("20분");
                 }
 
                 Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
@@ -160,7 +185,7 @@ public class RecommendActivity extends AppCompatActivity {
                         Toast.makeText(RecommendActivity.this, "서버 오류가 발생했습니다.", Toast.LENGTH_SHORT).show();
                     }
                 };
-                ListRequest ListRequest = new ListRequest(userId,exerciseList,responseListener,errorListener);
+                ListRequest ListRequest = new ListRequest(userId,exerciseList,setCountList,responseListener,errorListener);
                 RequestQueue queue = Volley.newRequestQueue(RecommendActivity.this);
                 queue.add(ListRequest);
             }
