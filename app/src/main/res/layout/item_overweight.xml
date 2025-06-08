@@ -17,7 +17,6 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/running"
-            android:background="#000000"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -34,18 +33,6 @@
             app:layout_constraintStart_toEndOf="@id/exerciseImage1"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 시간: 30분"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 항목 2 -->
@@ -58,8 +45,7 @@
             android:id="@+id/exerciseImage2"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/stepmill"
-            android:background="#000000"
+            android:src="@drawable/stepmil"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -76,18 +62,6 @@
             app:layout_constraintStart_toEndOf="@id/exerciseImage2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 시간: 30분"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 항목 3 -->
@@ -101,7 +75,6 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/deadlift"
-            android:background="#000000"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -118,18 +91,6 @@
             app:layout_constraintStart_toEndOf="@id/exerciseImage3"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 세트수: 3"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 항목 4 -->
@@ -143,7 +104,6 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/benchpress"
-            android:background="#000000"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -160,18 +120,6 @@
             app:layout_constraintStart_toEndOf="@id/exerciseImage4"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 세트수: 3"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- 항목 5 -->
@@ -184,8 +132,7 @@
             android:id="@+id/exerciseImage5"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:src="@drawable/overheadpress"
-            android:background="#000000"
+            android:src="@drawable/ohp"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -200,18 +147,6 @@
             android:textColor="#000000"
             android:layout_marginStart="12dp"
             app:layout_constraintStart_toEndOf="@id/exerciseImage5"
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 세트수: 4"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -224,7 +159,6 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:src="@drawable/walking"
-            android:background="#000000"
             android:contentDescription="운동 이미지"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -239,17 +173,5 @@
             android:textColor="#000000"
             android:layout_marginStart="12dp"
             app:layout_constraintStart_toEndOf="@id/exerciseImage6"
-
-        <TextView
-            android:id="@+id/exerciseSet1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="추천 시간: 30분"
-            android:textSize="14sp"
-            android:textColor="#888888"
-            android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -13,11 +13,11 @@ import java.util.List;
 public class ListRequest extends JsonObjectRequest {
     private static final String URL = "http://192.168.0.18:8080/ListUp.jsp";
 
-    public ListRequest(String userID, List<String> exerciseIds, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
-        super(Request.Method.POST, URL, createRequestBody(userID, exerciseIds), listener, errorListener);
+    public ListRequest(String userID, List<String> exerciseIds, List<String> setCountList, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
+        super(Request.Method.POST, URL, createRequestBody(userID, exerciseIds,setCountList), listener, errorListener);
     }
 
-    private static JSONObject createRequestBody(String userID, List<String> exerciseIds) {
+    private static JSONObject createRequestBody(String userID, List<String> exerciseIds,List<String> setCountList) {
         JSONObject json = new JSONObject();
         try {
             json.put("userID", userID);
@@ -26,6 +26,13 @@ public class ListRequest extends JsonObjectRequest {
                 jsonArray.put(id);
             }
             json.put("exerciseIds", jsonArray);
+
+            JSONArray jsonArray2 = new JSONArray();
+            for (String setCount : setCountList) {
+                jsonArray2.put(setCount);
+            }
+            json.put("setCountList", jsonArray2);
+
         } catch (JSONException e) {
             e.printStackTrace();
         }
