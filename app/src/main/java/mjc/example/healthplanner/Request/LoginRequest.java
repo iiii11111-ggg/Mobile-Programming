@@ -6,7 +6,8 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 public class LoginRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.18:8080/UserLogin.jsp"; //
+    private static final String BASE_URL = "http://3.107.190.203:8080/HealthPlannerBackEnd/";
+    private static final String URL = BASE_URL + "UserLogin.jsp"; //
     private Map<String,String> parameters;
     public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);

@@ -8,7 +8,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class setCountRequest extends JsonObjectRequest {
-    private static final String URL = "http://192.168.0.18:8080/setCountChange.jsp";
+    private static final String BASE_URL = "http://3.107.190.203:8080/HealthPlannerBackEnd/";
+    private static final String URL = BASE_URL + "setCountChange.jsp";
 
     public setCountRequest(String userID, String exerciseId,String setCount, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
         super(Request.Method.POST, URL, createRequestBody(userID, exerciseId,setCount), listener, errorListener);

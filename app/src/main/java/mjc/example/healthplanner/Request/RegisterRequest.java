@@ -6,7 +6,8 @@ import com.android.volley.toolbox.StringRequest;
 import java.util.HashMap;
 import java.util.Map;
 public class RegisterRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.18:8080/UserRegister.jsp"; //
+    private static final String BASE_URL = "http://3.107.190.203:8080/HealthPlannerBackEnd/";
+    private static final String URL = BASE_URL + "UserRegister.jsp"; //
     private Map<String,String> parameters;
     public RegisterRequest(String userID, String userPassword, String userGender,String userName, String userAge,
                            String userHeight,String userWeight, Response.Listener<String> listener) {

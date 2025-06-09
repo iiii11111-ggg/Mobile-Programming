@@ -8,7 +8,8 @@ import java.util.Map;
 
 
 public class ValidateRequest extends StringRequest {
-    final static private String URL = "http://192.168.0.18:8080/UserValidate.jsp"; //
+    private static final String BASE_URL = "http://3.107.190.203:8080/HealthPlannerBackEnd/";
+    private static final String URL = BASE_URL + "UserValidate.jsp"; //
     private Map<String,String> parameters;
     public ValidateRequest(String userID, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);

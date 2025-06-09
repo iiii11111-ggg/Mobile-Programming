@@ -11,7 +11,8 @@ import org.json.JSONObject;
 import java.util.List;
 
 public class RecordedDateRequest extends JsonObjectRequest {
-    private static final String URL = "http://192.168.0.18:8080/RecordedDate.jsp";
+    private static final String BASE_URL = "http://3.107.190.203:8080/HealthPlannerBackEnd/";
+    private static final String URL = BASE_URL + "RecordedDate.jsp";
 
     public RecordedDateRequest(String userID, Response.Listener<JSONObject> listener, Response.ErrorListener errorListener) {
         super(Request.Method.POST, URL, createRequestBody(userID), listener, errorListener);
