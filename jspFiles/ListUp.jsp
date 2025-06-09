@@ -24,6 +24,7 @@ try {
 
     String pr_id = (String) jsonRequest.get("userID");
     JSONArray exerciseIds = (JSONArray) jsonRequest.get("exerciseIds");
+    JSONArray setCountList = (JSONArray) jsonRequest.get("setCountList");
 
     Class.forName("com.mysql.jdbc.Driver");
     conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/healthPlanner", "root", "1234");
@@ -68,13 +69,15 @@ try {
     }
 
     // exercise_list에 운동 아이디들 insert
-    sql = "insert into exercise_list (exerciseId, recordId) values (?, ?)";
+    sql = "insert into exercise_list (exerciseId, recordId, setCount) values (?, ?, ?)";
     pstmt = conn.prepareStatement(sql);
 
     for (int i = 0; i < exerciseIds.size(); i++) {
         String id = (String) exerciseIds.get(i);
+        String count = (String) setCountList.get(i);
         pstmt.setString(1, id);
         pstmt.setString(2, recordId);
+        pstmt.setString(3, count);
         int result = pstmt.executeUpdate();
 
         if (result != 1) {
@@ -86,7 +89,6 @@ try {
         }
     }
     pstmt.close();
-
     jsonResponse.put("success", success);
 
 } catch (Exception e) {
