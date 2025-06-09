@@ -19,7 +19,7 @@
         android:layout_gravity="center"
         android:text="운동 예시"
         android:textColor="@color/black"
-        android:textSize="11dp"
+        android:textSize="12sp"
         />
     <TextView
         android:id="@+id/setCount"
@@ -27,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="2세트"
-        android:textSize="9dp"
+        android:textStyle="bold"
+        android:textSize="9sp"
         />
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AutoCompleteTextView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -41,6 +43,8 @@ public class RecordActivity extends AppCompatActivity {
     private TextView currentSelectedTab;
 
     private List<TextView> categoryTabs;
+    private ImageView calender;
+    private FloatingActionButton fab;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -50,12 +54,21 @@ public class RecordActivity extends AppCompatActivity {
         actvSearch = findViewById(R.id.actv_search);
         exerciseListView = findViewById(R.id.exercise_list);
         noResults = findViewById(R.id.no_results);
+        calender = findViewById(R.id.calendarMove);
 
         exerciseListAdapter = new ExerciseListAdapter(); // 어댑터 생성
         exerciseListView.setLayoutManager(new LinearLayoutManager(this)); //
         exerciseListView.setAdapter(exerciseListAdapter); // 어댑터 연결
         allExercises = new ArrayList<>();
         categoryTabs = new ArrayList<>();
+        fab = findViewById(R.id.fab_button);
+
+        calender.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
             @Override
@@ -168,6 +181,17 @@ public class RecordActivity extends AppCompatActivity {
                 }).show();
             }
         });
+        // fab 버튼 리스터
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RecordActivity.this,ListActivity.class);
+                intent.putParcelableArrayListExtra("exerciseList",(ArrayList<Exercise>)allExercises);
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     // 새롭게 추가되는 메서드: 탭들을 초기화하고 클릭 리스너를 설정

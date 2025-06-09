@@ -17,7 +17,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -30,15 +29,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import mjc.example.healthplanner.Request.ListRequest;
 import mjc.example.healthplanner.Request.RecordedDateRequest;
 import mjc.example.healthplanner.Request.UserListRequest;
 
@@ -210,6 +206,7 @@ public class PlannerActivity extends AppCompatActivity {
 
                                     String imageName = record.getString("exerciseName");
                                     String koreanName = record.getString("koreanName");
+                                    String setCount = record.getString("setCount");
 
                                     LayoutInflater inflater = LayoutInflater.from(PlannerActivity.this);
 
@@ -217,6 +214,7 @@ public class PlannerActivity extends AppCompatActivity {
 
                                     ImageView imageView = itemView.findViewById(R.id.exerciseimg);
                                     TextView textView = itemView.findViewById(R.id.exerciseName);
+                                    TextView setCountText = itemView.findViewById(R.id.setCount);
 
                                     int imageResId = getApplicationContext().getResources().getIdentifier(imageName, "drawable", getApplicationContext().getPackageName());
                                     if(imageResId != 0){
@@ -226,6 +224,7 @@ public class PlannerActivity extends AppCompatActivity {
                                         imageView.setImageResource(R.drawable.start);
                                     }
                                     textView.setText(koreanName);
+                                    setCountText.setText(setCount);
                                     container.addView(itemView);
                                 }
                             }else{

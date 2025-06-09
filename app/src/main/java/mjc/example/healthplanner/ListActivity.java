@@ -105,6 +105,10 @@ public class ListActivity extends AppCompatActivity {
         allExercises = intent.getParcelableArrayListExtra("exerciseList");
         Exercise selectedId = intent.getParcelableExtra("selectedExercise");
 
+        if (selectedId == null) {
+            selectedId = new Exercise("dummy_id", "기본운동", "기본분류", R.drawable.selected_calendar,"99999");
+        }
+
         // 오늘 날짜 수정하기
         tvDate.setText(getTodayFormattedDate());
 

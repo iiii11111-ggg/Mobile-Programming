@@ -166,4 +166,16 @@
         android:layout_marginTop="50dp"
         android:visibility="gone"/>
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:backgroundTint="#00C700"
+        app:maxImageSize="38dp"
+        android:contentDescription="FAB"
+        app:srcCompat="@drawable/menu_icon_large" />
+
     </LinearLayout>
