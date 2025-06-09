@@ -78,7 +78,7 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/exerciseSet1"
+            android:id="@+id/exerciseSet3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="추천 시간: 30분"
@@ -120,7 +120,7 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/exerciseSet1"
+            android:id="@+id/exerciseSet4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="추천 시간: 30분"
@@ -162,7 +162,7 @@
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
-            android:id="@+id/exerciseSet1"
+            android:id="@+id/exerciseSet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="추천 세트: 5"
@@ -204,7 +204,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/exerciseSet1"
+            android:id="@+id/exerciseSet5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="추천 시간: 30분"
@@ -245,7 +245,7 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
         <TextView
-            android:id="@+id/exerciseSet1"
+            android:id="@+id/exerciseSet6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="추천 시간: 30분"

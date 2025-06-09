@@ -17,11 +17,11 @@
 
         <!-- ← 아이콘 -->
         <ImageView
-            android:layout_width="34dp"
-            android:layout_height="34dp"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
             android:layout_marginEnd="12dp"
-            android:contentDescription="뒤로가기"
-            android:src="@drawable/backbutton" />
+            android:contentDescription="돋보기"
+            android:src="@drawable/searchicon" />
 
         <!-- 검색창 -->
         <AutoCompleteTextView
@@ -32,8 +32,10 @@
             android:hint="운동을 입력하세요"
             android:orientation="horizontal"
             android:completionThreshold="1"
+            android:dropDownHeight="200dp"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp" />
+            android:paddingEnd="12dp"
+            android:background="@null"/>
 
         <!-- + 아이콘 -->
         <ImageView
@@ -41,6 +43,7 @@
             android:layout_height="37dp"
             android:layout_marginStart="12dp"
             android:contentDescription="추가"
+            android:id="@+id/calendarMove"
             android:src="@drawable/calendarbutton" />
     </LinearLayout>
     <HorizontalScrollView
@@ -54,6 +57,7 @@
         android:paddingBottom="8dp">
 
         <LinearLayout
+            android:id="@+id/category_tabs_container"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -61,66 +65,81 @@
 
             <!-- 분류 탭 -->
             <TextView
+                android:id="@+id/tab_all"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="전체"
                 android:textSize="14sp"
-                android:textColor="#000000"
                 android:padding="8dp"
-                android:layout_marginEnd="8dp" />
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"/>
 
             <!-- 나머지 탭 -->
             <TextView
+                android:id="@+id/tab_leg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="목"
+                android:text="하체"
                 android:textSize="14sp"
-                android:textColor="#888888"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
                 android:padding="8dp"
                 android:layout_marginEnd="8dp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="승모근"
-                android:textSize="14sp"
-                android:textColor="#888888"
-                android:padding="8dp"
-                android:layout_marginEnd="8dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="어깨"
-                android:textSize="14sp"
-                android:textColor="#888888"
-                android:padding="8dp"
-                android:layout_marginEnd="8dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="가슴"
-                android:textSize="14sp"
-                android:textColor="#888888"
-                android:padding="8dp"
-                android:layout_marginEnd="8dp" />
-
-            <TextView
+                android:id="@+id/tab_back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="등"
                 android:textSize="14sp"
-                android:textColor="#888888"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
                 android:padding="8dp"
                 android:layout_marginEnd="8dp" />
 
             <TextView
+                android:id="@+id/tab_chest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="삼두"
+                android:text="가슴"
                 android:textSize="14sp"
-                android:textColor="#888888"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tab_arm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="팔"
+                android:textSize="14sp"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tab_shoulder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="어깨"
+                android:textSize="14sp"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
+                android:padding="8dp"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/tab_cardio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="유산소"
+                android:textSize="14sp"
+                android:background="@drawable/tab_selector"
+                android:textColor="@color/tab_text_selector"
                 android:padding="8dp"
                 android:layout_marginEnd="8dp" />
         </LinearLayout>

@@ -197,7 +197,6 @@ public class PlannerActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
 
                         try {
-                            Log.d("test", ""+response.getBoolean("found"));
                             if (response.getBoolean("found")) {
                                 recordText.setVisibility(View.VISIBLE);
                                 nullText.setVisibility(View.INVISIBLE);
@@ -211,9 +210,6 @@ public class PlannerActivity extends AppCompatActivity {
 
                                     String imageName = record.getString("exerciseName");
                                     String koreanName = record.getString("koreanName");
-
-                                    Log.d("test", imageName+":"+koreanName);
-
 
                                     LayoutInflater inflater = LayoutInflater.from(PlannerActivity.this);
 
