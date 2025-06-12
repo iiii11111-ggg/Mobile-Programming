@@ -6,6 +6,6 @@
             <solid android:color="#BABABABA"/>
             <corners android:radius="10dp"/>
         <size
-            android:width="50dp"  android:height="50dp" /> </shape>
+            android:width="45dp"  android:height="45dp"  /> </shape>
     </item>
 </layer-list>

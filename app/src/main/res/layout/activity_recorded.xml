@@ -96,78 +96,89 @@
         android:layout_height="170dp"
         android:visibility="invisible"
         android:padding="16dp"
-        android:background="#E0D9D9D9"
+        android:background="#D9D9D9"
         app:layout_constraintBottom_toBottomOf="parent">
 
         <!-- 달력 이미지 -->
         <ImageView
             android:id="@+id/exerciseImg"
-            android:layout_width="100dp"
+            android:layout_width="85dp"
             android:layout_height="100dp"
             android:src="@drawable/calendarbutton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:contentDescription="운동 아이콘" />
 
         <LinearLayout
+            android:id="@+id/setBox"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:orientation="horizontal"
+            android:gravity="end"
             app:layout_constraintTop_toTopOf="@id/bottomBar"
             app:layout_constraintBottom_toBottomOf="@id/bottomBar"
             app:layout_constraintRight_toRightOf="@id/bottomBar"
             app:layout_constraintLeft_toRightOf="@id/exerciseImg"
             >
-            <!-- 라디오 그룹 -->
-            <RadioGroup
-                android:id="@+id/rgSelect"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:layout_marginStart="10dp">
 
-                <RadioButton
-                    android:id="@+id/rbSet"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="세트" />
-
-                <RadioButton
-                    android:id="@+id/rbTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="시간(분)" />
-            </RadioGroup>
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <!-- 숫자 선택기 -->
-            <Spinner
-                android:id="@+id/spinner"
-                android:layout_width="60dp"
-                android:layout_height="30dp"
-                android:background="#DCDCDC"
-                android:spinnerMode="dropdown"
-                />
-            <View
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_weight="1"/>
-
-            <!-- 세트 등록 버튼 -->
-            <Button
-                android:id="@+id/btnRegister"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:text="세트 등록"
-                />
+                android:layout_gravity="center_vertical"
+                >
+                <RadioGroup
+                    android:id="@+id/rgSelect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginStart="10dp">
 
+                    <RadioButton
+                        android:id="@+id/rbSet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="세트" />
 
+                    <RadioButton
+                        android:id="@+id/rbTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="시간(분)" />
+                </RadioGroup>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+                <!-- 숫자 선택기 -->
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="50dp"
+                    android:layout_height="30dp"
+                    android:background="#FFFFFF"
+                    android:spinnerMode="dropdown"
+                    android:layout_gravity="center_vertical"
+                    />
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <Button
+                    android:id="@+id/btnRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="세트 등록"
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+            <!-- 라디오 그룹 -->
         </LinearLayout>
+
+
         <TextView
             android:id="@+id/exerciseName"
             android:layout_width="wrap_content"

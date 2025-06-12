@@ -61,16 +61,17 @@
     <!-- 캘린더 뷰 -->
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:mcv_selectionMode="single"
-        android:layout_marginTop="10dp"
         app:mcv_selectionColor="@color/gray"
-        app:mcv_tileHeight="90dp"
+        app:mcv_tileHeight="65dp"
+        android:paddingBottom="50dp"
         app:mcv_headerTextAppearance="@style/CalendarHeader"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/BottomBar"
-        app:layout_constraintTop_toBottomOf="@id/topBar"/>
+        app:layout_constraintTop_toBottomOf="@id/line"/>
 
     <!-- 하단 날짜 정보 -->
     <LinearLayout
