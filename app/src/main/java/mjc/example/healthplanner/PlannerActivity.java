@@ -101,8 +101,6 @@ public class PlannerActivity extends AppCompatActivity {
             }
         });
 
-
-
         // -------------------------- 기록된 날까 가져오기 --------------------------------
         Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
             @Override

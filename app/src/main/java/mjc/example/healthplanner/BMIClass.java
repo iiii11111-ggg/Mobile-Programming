@@ -51,7 +51,6 @@ public class BMIClass{
                 closest = entry.getKey();
             }
         }
-
         return closest;
     }
 

@@ -89,7 +89,7 @@ public class PlannerDecoratior {
 
 
 
-    // 🔴 일요일 데코레이터 (빨간색)
+    //  일요일 데코레이터 (빨간색)
     private static class SundayDecorator implements DayViewDecorator {
 
         private final Calendar calendar = Calendar.getInstance();
@@ -112,7 +112,7 @@ public class PlannerDecoratior {
         }
     }
 
-    // 🔵 토요일 데코레이터 (파란색)
+    //  토요일 데코레이터 (파란색)
     private static class SaturdayDecorator implements DayViewDecorator {
 
         private final Calendar calendar = Calendar.getInstance();
@@ -135,6 +135,7 @@ public class PlannerDecoratior {
         }
     }
 
+    //기록이 있는 날 꾸미기
     public static class GrayDateDecorator implements DayViewDecorator {
 
         private final HashSet<CalendarDay> dates;
@@ -155,7 +156,7 @@ public class PlannerDecoratior {
             view.setBackgroundDrawable(grayBackground);
         }
     }
-
+    // 오늘 날짜를 강조
     public static class TodayDecorator implements DayViewDecorator {
 
         private final CalendarDay today;
@@ -177,7 +178,7 @@ public class PlannerDecoratior {
             // view.setBackgroundDrawable(ContextCompat.getDrawable(view.view.getContext(), R.drawable.your_today_background));
         }
     }
-
+    // 오늘 날을 제외하고 흐릿하게
     public static class DimDatesDecorator implements DayViewDecorator {
 
         private final CalendarDay today;
@@ -200,7 +201,7 @@ public class PlannerDecoratior {
 
         }
     }
-
+    // 선택된 날짜 디자인
     public static class SelectedDateDecorator implements DayViewDecorator {
 
         private final CalendarDay selectedDate;
