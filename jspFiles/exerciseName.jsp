@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="UTF-8" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ page import="java.sql.*" %>
 <%@ page import="java.io.BufferedReader" %>
 <%@ page import="org.json.simple.*" %>
@@ -26,8 +26,8 @@ try {
     JSONParser parser = new JSONParser();
     JSONObject jsonRequest = (JSONObject) parser.parse(sb.toString());
 
-    Class.forName("com.mysql.jdbc.Driver");
-    conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/healthPlanner", "root", "1234");
+     Class.forName("com.mysql.cj.jdbc.Driver"); 
+      conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthplanner?useUnicode=true&characterEncoding=utf8", "healthuser", "Mjc0203!");
 
     String sql = "select * from exercise_type";
     pstmt = conn.prepareStatement(sql);

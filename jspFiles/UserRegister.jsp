@@ -1,7 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="java.sql.*"%>
 <%@page import="org.json.simple.JSONObject"%>
 <%@page import="org.json.simple.parser.JSONParser"%>
-<%@ page language = "java" contentType = "text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%
     // JSON 응답을 위한 객체
     JSONObject jsonResponse = new JSONObject();
@@ -14,8 +14,8 @@
     String user="root";
     String password="1234";
     try {
-        Class.forName("com.mysql.jdbc.Driver"); 
-        conn = DriverManager.getConnection(url, user, password);
+        Class.forName("com.mysql.cj.jdbc.Driver"); 
+      conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthplanner?useUnicode=true&characterEncoding=utf8", "healthuser", "Mjc0203!");
 
         String userID = request.getParameter("userID");
         String userPasswd = request.getParameter("userPassword");

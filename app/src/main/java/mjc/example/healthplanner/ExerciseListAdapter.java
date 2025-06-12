@@ -5,7 +5,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast; // 예시를 위한 Toast
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +16,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
 
     private List<Exercise> exercises;
 
-    // 아이템 클릭 리스너 인터페이스 (선택 사항)
+    // 아이템 클릭 리스너 인터페이스
     public interface OnItemClickListener {
         void onItemClick(Exercise exercise);
     }
@@ -37,7 +36,7 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
         notifyDataSetChanged();
     }
 
-    // 특정 position의 아이템을 가져오는 메서드 (AutoCompleteTextView 아이템 클릭 시 유용)
+    // 특정 position의 아이템을 가져오는 메서드
     public Exercise getItem(int position) {
         if (position >= 0 && position < exercises.size()) {
             return exercises.get(position);
@@ -73,9 +72,9 @@ public class ExerciseListAdapter extends RecyclerView.Adapter<ExerciseListAdapte
     }
 
 
-    // -------------------------------------------------------------------------
-    // 4단계: RecyclerView.ViewHolder (내부 클래스로 구현)
-    // -------------------------------------------------------------------------
+
+    // RecyclerView.ViewHolder
+
     public static class ExerciseViewHolder extends RecyclerView.ViewHolder {
         ImageView exerciseImage;
         TextView koreanName;

@@ -41,7 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
         final EditText etWeight = findViewById(R.id.etWeight);
         final Button btnValidate = findViewById(R.id.btnValidate);
 
-
+        // 성별 고르는 순간 저장하기
         RadioGroup rgroupGender = findViewById(R.id.rgroupGender);
         rgroupGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -57,6 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
                 else{userGender="";}
             }
         });
+        // 아이디 중복버튼 클릭
         btnValidate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
                 if (validate) return;
-
+                // 중복 처리
                 Response.Listener responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -117,6 +118,7 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
         Button btnSubmit = findViewById(R.id.btnSubmit);
+        // 제출 버튼 리스너
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,6 +130,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String userHeight = etHeight.getText().toString();
                 String userWeight = etWeight.getText().toString();
 
+                // 어느 하나라도 비어있을 때
                 if (userPassword.equals("") || userName.equals("") || userPasswordValid.equals("") ||
                           userGender.equals("") || userAge.equals("") || userHeight.equals("") || userWeight.equals(""))
                 {
@@ -139,7 +142,7 @@ public class RegisterActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
-
+                // 비밀번호 미 일치 시
                 if (!userPassword.equals(userPasswordValid)) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
                     dialog = builder.setMessage("비밀번호가 일치하지 않습니다.")

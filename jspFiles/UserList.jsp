@@ -26,8 +26,8 @@ try {
     String id = (String) jsonRequest.get("userID");
     String date = (String) jsonRequest.get("date");
 
-    Class.forName("com.mysql.jdbc.Driver");
-    conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/healthPlanner", "root", "1234");
+  Class.forName("com.mysql.cj.jdbc.Driver"); 
+      conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthplanner?useUnicode=true&characterEncoding=utf8", "healthuser", "Mjc0203!");
 
     // 오늘 날짜의 기록이 있는지 체크
     String sql = "select recordId from exercise_record where userId = ? and recordDate = ?";

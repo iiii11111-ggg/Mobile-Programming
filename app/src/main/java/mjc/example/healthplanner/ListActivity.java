@@ -41,7 +41,7 @@ import mjc.example.healthplanner.Request.DeleteRequest;
 import mjc.example.healthplanner.Request.UserRecordReqeust;
 import mjc.example.healthplanner.Request.setCountRequest;
 
-
+// 유저 리스트 관리 화면
 public class ListActivity extends AppCompatActivity {
 
     // UI 요소 선언
@@ -79,8 +79,8 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_recorded); // activity_recorded.xml 레이아웃 사용
 
         tvDate = findViewById(R.id.tv_current_date);
-        btnBack = findViewById(R.id.btnBack); // 뒤로가기 버튼
-        calendarReturn = findViewById(R.id.calendarReturn); // 캘린더 돌아가기 버튼 (XML ID에 맞춤)
+        btnBack = findViewById(R.id.btnBack);
+        calendarReturn = findViewById(R.id.calendarReturn);
         exerciseImg = findViewById(R.id.exerciseImg);
         exerciseName = findViewById(R.id.exerciseName);
         rgSelect = findViewById(R.id.rgSelect);
@@ -256,6 +256,7 @@ public class ListActivity extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             if(response.getBoolean("success")) {
+                                //세트수가 변경되면 어댑터의 리스너를 동작시켜 화면에도 갱신
                                 recordListAdapter.updateSetCountById(selectedExerciseId,setNumber);
                                 Toast.makeText(ListActivity.this, "세트수가 변경되었습니다.", Toast.LENGTH_SHORT).show();
                             }
@@ -279,6 +280,7 @@ public class ListActivity extends AppCompatActivity {
         });
 
     }
+    // 오늘날짜 가져오기
     public String getTodayFormattedDate() {
         LocalDate today = LocalDate.now();
         DayOfWeek dayOfWeek = today.getDayOfWeek();

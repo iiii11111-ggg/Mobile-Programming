@@ -92,6 +92,7 @@ public class RecordListAdapter extends RecyclerView.Adapter<RecordListAdapter.Re
     }
     private OnDeleteClickListener deleteClickListener;
 
+    //삭제버튼 클릭 리스너
     public void setOnDeleteClickListener(OnDeleteClickListener listener) {
         this.deleteClickListener = listener;
     }

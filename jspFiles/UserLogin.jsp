@@ -1,9 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="java.sql.*"%>
  <%@page import="java.sql.ResultSet"%>
  <%@page import="java.sql.PreparedStatement"%>
  <%@page import="java.sql.DriverManager"%>
  <%@page import="java.sql.Connection"%>
- <%@ page language = "java" contentType = "text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
  <%@page import="org.json.simple.*"%>
  <%
  String pr_id = request.getParameter("userID");
@@ -15,15 +15,19 @@
  Connection conn=null;
     PreparedStatement prepared_stat=null;
  ResultSet rs=null;
- String url="jdbc:mysql://127.0.0.1:3306/healthPlanner";
+ String url="jdbc:mysql://localhost:3306/healthPlanner";
  String user="root";
  String password="1234";
+
+
+     
 
  JSONObject jsonResponse=new JSONObject();
 
  try{
-        Class.forName("com.mysql.jdbc.Driver");
-  conn=DriverManager.getConnection(url,user,password);
+         Class.forName("com.mysql.cj.jdbc.Driver"); 
+   conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthplanner?useUnicode=true&characterEncoding=utf8", "healthuser", "Mjc0203!");
+
   
    String sql = "select userId from user where userId = ? AND userPassword = ?";
    prepared_stat = conn.prepareStatement(sql);
@@ -76,7 +80,7 @@
     out.println("SQLException:"+ex.getMessage());
     success = false;
         jsonResponse.put("success", success);
-        jsonResponse.put("message", "데이터베이스 오류: " + ex.getMessage());
+        jsonResponse.put("message", "�곗�댄�곕��댁�� �ㅻ�: " + ex.getMessage());
  } finally { 
   if (rs!=null) rs.close();
   if (prepared_stat!=null) prepared_stat.close();

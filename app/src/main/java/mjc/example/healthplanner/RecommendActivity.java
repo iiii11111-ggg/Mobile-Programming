@@ -23,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mjc.example.healthplanner.Request.ListRequest;
-
+// 운동 추천 화면
 public class RecommendActivity extends AppCompatActivity {
 
     TextView skipText,BMIText;
@@ -101,7 +101,7 @@ public class RecommendActivity extends AppCompatActivity {
             }
         });
 
-        //---------------------이대로 진행하기 시 DB에 리스트 기록-------------------------
+        //---------------------이대로 진행하기 시 DB에 리스트 기록 : 운동 아이디와 세트 수-------------------------
 
         Button listupButton = findViewById(R.id.listupButton);
         List<String> exerciseList = new ArrayList<>();

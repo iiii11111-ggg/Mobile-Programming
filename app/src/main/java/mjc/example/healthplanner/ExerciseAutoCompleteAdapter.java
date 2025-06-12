@@ -59,6 +59,7 @@ public class ExerciseAutoCompleteAdapter extends ArrayAdapter<Exercise> {
             return ((Exercise) resultValue).getKoreanName();
         }
 
+        // 검색된 exercise를 받아서 자동완성 리스트에 추가
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             FilterResults filterResults = new FilterResults();
@@ -66,7 +67,6 @@ public class ExerciseAutoCompleteAdapter extends ArrayAdapter<Exercise> {
 
             if (constraint != null && constraint.length() > 0) {
                 String filterPattern = constraint.toString().toLowerCase().trim();
-
                 for (Exercise exercise : allExercises) {
                     if (exercise.getKoreanName().toLowerCase().contains(filterPattern) ||
                             exercise.getEnglishName().toLowerCase().contains(filterPattern) ||

@@ -19,6 +19,7 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONObject;
 
 import mjc.example.healthplanner.Request.LoginRequest;
+// 로그인 화면
 public class LoginActivity extends AppCompatActivity {
     AlertDialog dialog;
     @Override
@@ -61,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             boolean success = jsonResponse.getBoolean("success");
 
                             if(success)
-                            {
+                            { //로그인 성공 시 화면 넘어가기 전 유저의 모든 정보를 SharePreferences 객체에 저장 및 등록
                                 SharedPreferences shared = getSharedPreferences("userInfo",MODE_PRIVATE);
                                 SharedPreferences.Editor editor = shared.edit();
                                 editor.putString("userId",jsonResponse.getString("id"));

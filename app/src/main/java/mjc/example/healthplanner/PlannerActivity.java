@@ -38,7 +38,7 @@ import java.util.TimeZone;
 import mjc.example.healthplanner.Request.RecordedDateRequest;
 import mjc.example.healthplanner.Request.UserListRequest;
 
-
+// 캘린더 화면
 public class PlannerActivity extends AppCompatActivity {
 
     MaterialCalendarView calendarView;
@@ -82,6 +82,7 @@ public class PlannerActivity extends AppCompatActivity {
         month = today.getMonth();
         dayOfMonth = today.getDay();
 
+        //----------------------오늘 날짜 생성 -------------------------
         Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Asia/Seoul"), Locale.KOREA);
         calendar.clear();
         calendar.set(year, month-1, dayOfMonth);
@@ -101,7 +102,7 @@ public class PlannerActivity extends AppCompatActivity {
             }
         });
 
-        // -------------------------- 기록된 날까 가져오기 --------------------------------
+        // -------------------------- 기록이 있는 날까 가져오기 --------------------------------
         Response.Listener<JSONObject> responseListener = new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -198,6 +199,7 @@ public class PlannerActivity extends AppCompatActivity {
 
                                 JSONArray nameList = response.getJSONArray("nameList");
                                 container.removeAllViews();
+                                // 가지고있는 운동 리스트 출력 : 컨테이너 뷰 인플레이트
                                 for(int i = 0; i < nameList.length();i++)
                                 {
                                     JSONObject record = nameList.getJSONObject(i);
@@ -254,7 +256,7 @@ public class PlannerActivity extends AppCompatActivity {
             }
         });
     }
-
+    // 해당 날짜의 요일을 반환
     private String getDayName(int dayOfWeek) {
         switch (dayOfWeek) {
             case Calendar.SUNDAY: return "일요일";

@@ -35,7 +35,7 @@ public class BMIClass{
             else return "저체중";
         }
     }
-
+    //BMI와 성장도표를 이용한 체중 평가퍼센티지를 반환
     private static int estimatePercentile(float bmi, int age, String gender) {
         Map<Integer, Map<Integer, Double>> ageMap = bmiPercentileTable.get(gender);
         if (ageMap == null || !ageMap.containsKey(age)) return -1;

@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
+// 로그인 후 화면
 public class MainActivity extends AppCompatActivity {
 
     private final long SPLASH_DELAY_TIME = 3000; // 3초 (밀리세컨드 단위)
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         String username = share.getString("userName","고객님");
         userName.setText("환영합니다." +username+"님!!");
 
+        // Looper Handler를 생성해서 기다렸다가 화면을 이동하는 UI스레드 작업
         mDelayHandler = new Handler(Looper.getMainLooper());
         mRunnable = new Runnable() {
             @Override
